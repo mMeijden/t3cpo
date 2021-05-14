@@ -11,8 +11,7 @@ class PublicApi(Api):
     def invoke(self, method, path, params=None):
         query_params = self.parse_query_params(params)
         absolute_url = self.build_absolute_url(path, query_params)
-        response = requests.request(method=method,
-                                    url=absolute_url)
+        response = requests.request(method=method, url=absolute_url)
         return response
 
     def ping(self):
@@ -20,4 +19,3 @@ class PublicApi(Api):
 
     def time(self):
         return self.invoke('GET', f'{self.relative_base}/time').json()
-
