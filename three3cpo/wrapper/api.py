@@ -7,7 +7,7 @@ from urllib.parse import urlencode
 
 class Api(object):
 
-    def __init__(self, key: str, secret: str, base_api_url: str = "https://api.3commas.io"):
+    def __init__(self, key: str = None, secret: str = None, base_api_url: str = "https://api.3commas.io"):
         self.key = key
         self.secret = secret
         self.base_api_url = base_api_url

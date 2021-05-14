@@ -5,7 +5,7 @@ class SmartTradesApiV2(Api):
 
     def __init__(self, key, secret):
         super().__init__(key, secret)
-        self.relative_base = '/v2/smart_trades'
+        self.relative_base = '/public/api/v2/smart_trades'
 
     def get_smart_trade_history(self, params=None):
         return self.invoke('GET', f'{self.relative_base}', params=params).json()
