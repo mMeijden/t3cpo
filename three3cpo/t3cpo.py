@@ -1,11 +1,11 @@
-from wrapper import bots
-from wrapper import accounts
+from wrapper.bots import BotsApi
+from wrapper.accounts import AccountsApi
+from wrapper.deals import DealsApi
 
 
 class Three3Cpo(object):
 
     def __init__(self, key, secret):
-        self.key = key
-        self.secret = secret
-        self.bots = bots.BotsApi(key=self.key, secret=self.secret)
-        self.accounts = accounts.AccountsApi(key=self.key, secret=self.secret)
+        self.bots = BotsApi(key=key, secret=secret)
+        self.accounts = AccountsApi(key=key, secret=secret)
+        self.deals = DealsApi(key=key, secret=secret)
