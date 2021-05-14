@@ -1,5 +1,5 @@
-from wrapper.api import Api
 import requests
+from three3cpo.wrapper.api import Api
 
 
 class PublicApi(Api):

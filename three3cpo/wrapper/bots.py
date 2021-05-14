@@ -1,4 +1,4 @@
-from wrapper.api import Api
+from three3cpo.wrapper.api import Api
 
 
 class BotsApi(Api):

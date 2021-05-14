@@ -1,11 +1,4 @@
-from wrapper.bots import BotsApi
-from wrapper.accounts import AccountsApi
-from wrapper.deals import DealsApi
-from wrapper.grid_bots import GridBotsApi
-from wrapper.marketplace import MarketPlaceApi
-from wrapper.smarttrades import SmartTradesApiV2
-from wrapper.users import UsersApi
-from wrapper.public import PublicApi
+from three3cpo.wrapper import PublicApi, BotsApi, AccountsApi, DealsApi, GridBotsApi, MarketPlaceApi, SmartTradesApiV2, UsersApi
 
 
 class Three3Cpo(object):

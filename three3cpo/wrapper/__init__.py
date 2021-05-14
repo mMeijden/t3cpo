@@ -1,5 +1,4 @@
 from .accounts import AccountsApi
-from .api import Api
 from .bots import BotsApi
 from .deals import DealsApi
 from .grid_bots import GridBotsApi
