@@ -1,5 +1,4 @@
 import requests
-import json
 import hmac
 import hashlib
 from urllib.parse import urlencode

@@ -37,7 +37,7 @@ class GridBotsApi(Api):
     def enable_grid_bot(self, bot_id: int):
         return self.invoke('POST', f'{self.relative_base}/{bot_id}/enable').json()
 
-    def show_required_balance(self, bot_id:int):
+    def show_required_balance(self, bot_id: int):
         return self.invoke('GET', f'{self.relative_base}/{bot_id}/required_balances').json()
 
     def get_grid_bot_market_orders(self, bot_id: int):
