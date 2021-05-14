@@ -1,5 +1,6 @@
 import unittest
 from unittest import mock
+
 from three3cpo.wrapper import PublicApi
 
 
@@ -16,4 +17,3 @@ class TestPublicApi(unittest.TestCase):
         bot = PublicApi()
         bot.time()
         mock_request.assert_called_with(method='GET', url='https://api.3commas.io/public/api/ver1/time')
-
