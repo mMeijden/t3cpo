@@ -1,4 +1,4 @@
-from three3cpo.wrapper.api import Api
+from t3cpo.wrapper.api import Api
 
 
 class UsersApi(Api):
@@ -9,4 +9,3 @@ class UsersApi(Api):
 
     def change_mode(self, params):
         return self.invoke('POST', f'{self.relative_base}/change_mode', params=params).json()
-

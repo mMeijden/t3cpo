@@ -1,7 +1,7 @@
-from three3cpo.wrapper import PublicApi, BotsApi, AccountsApi, DealsApi, GridBotsApi, MarketPlaceApi, SmartTradesApiV2, UsersApi
+from t3cpo.wrapper import PublicApi, BotsApi, AccountsApi, DealsApi, GridBotsApi, MarketPlaceApi, SmartTradesApiV2, UsersApi
 
 
-class Three3Cpo(object):
+class T3CPO(object):
 
     def __init__(self, key, secret):
         self.Public = PublicApi()

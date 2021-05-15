@@ -1,7 +1,7 @@
 import unittest
 from unittest import mock
 
-from three3cpo.wrapper import PublicApi
+from t3cpo.wrapper import PublicApi
 
 
 class TestPublicApi(unittest.TestCase):

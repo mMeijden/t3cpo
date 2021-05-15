@@ -1,6 +1,6 @@
 import unittest
 from unittest import mock
-from three3cpo.wrapper import UsersApi
+from t3cpo.wrapper import UsersApi
 
 
 class TestUsersApi(unittest.TestCase):

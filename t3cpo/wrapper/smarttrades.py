@@ -1,4 +1,4 @@
-from three3cpo.wrapper.api import Api
+from t3cpo.wrapper.api import Api
 
 
 class SmartTradesApiV2(Api):
