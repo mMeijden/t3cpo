@@ -1,23 +1,22 @@
 import unittest
-from unittest import mock
-from t3cpo.wrapper import UsersApi
+from t3cpo import T3CPO
 import responses
 
-class TestUsersApi(unittest.TestCase):
 
+class TestT3Cpo(unittest.TestCase):
 
     @responses.activate
-    def test_user_mode(self):
+    def test_T3cpo_UsersApi(self):
         responses.add(method=responses.POST,
-                      url='https://api.3commas.io/public/api/ver1/users/change_mode?mode=paper',
+                      url='https://api.3commas.io/public/api/ver1/users/change_mode?mode=real',
                       json={'error': 'not found'},
                       status=200)
-        t3c = UsersApi('testKey', 'youshallnotpass')
-        t3c.change_mode({'mode': 'paper'})
+        t3c = T3CPO('testKey', 'youshallnotpass')
+        t3c.Users.change_mode({'mode': 'real'})
 
-        expected_url = 'https://api.3commas.io/public/api/ver1/users/change_mode?mode=paper'
+        expected_url = 'https://api.3commas.io/public/api/ver1/users/change_mode?mode=real'
         expected_key = 'testKey'
-        expected_sig = '7752c2b45165eaaf2846f53f626feae1da758883f621677ba1c57444a4085505'
+        expected_sig = 'e7db6bae980f81e1a05cc4b4f8849e92b5c189134c45f2274f1df915e35297fa'
 
         assert len(responses.calls) == 1
         assert responses.calls[0].request.url == expected_url
