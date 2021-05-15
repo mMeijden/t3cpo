@@ -2,6 +2,9 @@ import requests
 import hmac
 import hashlib
 from urllib.parse import urlencode
+from requests import Response
+from requests.adapters import HTTPAdapter
+from urllib3 import Retry
 
 
 class Api(object):
@@ -23,13 +26,25 @@ class Api(object):
         query_params = self.parse_query_params(params)
         absolute_url = self.build_absolute_url(path, query_params)
         sig = self.__sign_request(path, query_params)
+
         headers = {
             'APIKEY': self.key,
             'Signature': sig
         }
-        response = requests.request(method=method,
-                                    url=absolute_url,
-                                    headers=headers)
+
+        retry_strategy = Retry(
+            total=5,
+            status_forcelist=[429, 500, 502, 503, 504],
+            backoff_factor=0.25
+        )
+
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        https = requests.Session()
+        https.mount("https://", adapter)
+
+        response = https.request(method=method,
+                                 url=absolute_url,
+                                 headers=headers)
         return response
 
     @staticmethod
