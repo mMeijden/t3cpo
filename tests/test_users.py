@@ -3,8 +3,8 @@ from unittest import mock
 from t3cpo.wrapper import UsersApi
 import responses
 
-class TestUsersApi(unittest.TestCase):
 
+class TestUsersApi(unittest.TestCase):
 
     @responses.activate
     def test_user_mode(self):
