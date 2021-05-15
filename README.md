@@ -28,11 +28,12 @@ t3c.Users.change_mode({'mode': 'paper'})
 specific_info = t3c.Bots.bot_info(123456)
 account_info = t3c.Accounts.account_info(123)
 
-# Besides a required id, optional parameters can be provided as a dict. The optional dict is always the last argument.
+# Besides a required id, optional parameters can be provided as a dict. 
+# The optional dict is always the last argument.
 deposit_info = t3c.Accounts.networks_info(987654, {'purpose': 'deposit'})
 ```
 
-##Advanced usage
+## Advanced usage
 It's also possible to only use a single API wrapper for any particular reason.
 E.g. if you would like to combine multiple API credentials from 3Commas that have a different read/write model.
 
