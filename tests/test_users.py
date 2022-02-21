@@ -20,6 +20,8 @@ class TestUsersApi(unittest.TestCase):
 
         assert len(responses.calls) == 1
         assert responses.calls[0].request.url == expected_url
+        assert responses.calls[0].request.method == 'POST'
+
 
     @responses.activate
     def test_change_mode_real(self):
@@ -33,6 +35,7 @@ class TestUsersApi(unittest.TestCase):
         expected_url = 'https://api.3commas.io/public/api/ver1/users/change_mode?mode=real'
         assert len(responses.calls) == 1
         assert responses.calls[0].request.url == expected_url
+        assert responses.calls[0].request.method == 'POST'
 
     @responses.activate
     def test_change_to_real_trading_mode(self):
@@ -46,6 +49,7 @@ class TestUsersApi(unittest.TestCase):
         expected_url = 'https://api.3commas.io/public/api/ver1/users/change_mode?mode=real'
         assert len(responses.calls) == 1
         assert responses.calls[0].request.url == expected_url
+        assert responses.calls[0].request.method == 'POST'
 
     @responses.activate
     def test_change_to_paper_trading_mode(self):
@@ -58,3 +62,4 @@ class TestUsersApi(unittest.TestCase):
         expected_url = 'https://api.3commas.io/public/api/ver1/users/change_mode?mode=paper'
         assert len(responses.calls) == 1
         assert responses.calls[0].request.url == expected_url
+        assert responses.calls[0].request.method == 'POST'
