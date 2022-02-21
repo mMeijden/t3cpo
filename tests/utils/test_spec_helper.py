@@ -1,8 +1,6 @@
 import unittest
-from unittest import mock
 from dataspec import s
-from spec_helper import parse_spec_to_readable_message
-from t3cpo.wrapper import PublicApi
+from t3cpo.specs.spec_helper import parse_spec_to_readable_message
 
 
 class TestSpecHelper(unittest.TestCase):

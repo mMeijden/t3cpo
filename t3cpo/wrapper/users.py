@@ -1,5 +1,5 @@
 from t3cpo.wrapper.api import Api
-from user_api_spec import ChangeModeRequest
+from t3cpo.specs.user_api_spec import ChangeModeRequest
 
 
 class UsersApi(Api):

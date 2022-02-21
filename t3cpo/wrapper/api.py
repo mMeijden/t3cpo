@@ -2,10 +2,12 @@ import requests
 import hmac
 import hashlib
 from urllib.parse import urlencode
-from spec_helper import parse_spec_to_readable_message
 from requests.adapters import HTTPAdapter
+
 from urllib3 import Retry
 from dataspec import s
+
+from t3cpo.specs import parse_spec_to_readable_message
 
 
 class Api(object):
